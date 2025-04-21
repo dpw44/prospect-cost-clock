@@ -1,0 +1,14 @@
+
+{
+  "name": "Prospect Cost Clock",
+  "short_name": "Cost Clock",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#3d1684",
+  "theme_color": "#3d1684",
+  "icons": [{
+    "src": "logo.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

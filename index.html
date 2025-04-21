@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prospect Cost Clock</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
+</head>
+<body>
+  <div class="clock-container">
+    <h1>Prospect Cost Clock</h1>
+    <div class="input-fields">
+      <label for="prospectName">Prospect Name:</label>
+      <input type="text" id="prospectName" placeholder="Enter Prospect Name" />
+      <label for="annualCost">Annual Infrastructure Operational Cost Estimate ($):</label>
+      <input type="number" id="annualCost" placeholder="Enter Annual Cost" />
+    </div>
+    <div class="counter">
+      <p>Total Cost Since Jan 1:</p>
+      <div class="value" id="ytdAmount">$0</div>
+    </div>
+    <div class="counter">
+      <p>Cost This Session:</p>
+      <div class="value" id="sessionAmount">$0</div>
+    </div>
+    <img src="logo.png" alt="Quali Torque Logo" class="logo">
+    <p class="tagline">Eliminate Cloud Waste — Only With Quali Torque.</p>
+  </div>
+  <script>
+    const ratePerSecond = 7164; // USD per second
+    const janFirst = new Date(new Date().getFullYear(), 0, 1);
+    const startTime = new Date();
+
+    function updateCounters() {
+      const now = new Date();
+      const ytdSeconds = Math.floor((now - janFirst) / 1000);
+      const sessionSeconds = Math.floor((now - startTime) / 1000);
+      const ytdAmount = ytdSeconds * ratePerSecond;
+      const sessionAmount = sessionSeconds * ratePerSecond;
+
+      document.getElementById('ytdAmount').textContent = "$" + ytdAmount.toLocaleString();
+      document.getElementById('sessionAmount').textContent = "$" + sessionAmount.toLocaleString();
+    }
+
+    updateCounters();
+    setInterval(updateCounters, 1000);
+  </script>
+</body>
+</html>

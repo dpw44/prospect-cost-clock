@@ -1,0 +1,43 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3d1684;
+  color: white;
+  text-align: center;
+}
+
+.clock-container {
+  padding: 40px 20px;
+}
+
+.input-fields {
+  margin: 20px 0;
+}
+
+.input-fields input {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  width: 300px;
+}
+
+.counter {
+  margin: 20px 0;
+}
+
+.value {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.logo {
+  width: 150px;
+  margin-top: 30px;
+}
+
+.tagline {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #ddd;
+}
