@@ -1,8 +1,14 @@
 
 self.addEventListener('install', function(e) {
   e.waitUntil(
-    caches.open('prospect-cost-cache').then(function(cache) {
-      return cache.addAll(['./index.html', './style.css', './logo.png']);
+    caches.open('prospect-clock-cache').then(function(cache) {
+      return cache.addAll([
+        './index.html',
+        './style.css',
+        './script.js',
+        './manifest.webmanifest',
+        './logo.png'
+      ]);
     })
   );
 });

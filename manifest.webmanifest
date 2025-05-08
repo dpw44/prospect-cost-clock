@@ -1,7 +1,7 @@
 
 {
   "name": "Prospect Cost Clock",
-  "short_name": "Cost Clock",
+  "short_name": "CostClock",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#3d1684",
